@@ -13,7 +13,7 @@ function setup() {
   draw_button();
       textSize(32);
       fill(0, 102, 20);
-  text('Score : '+score, 400, 30);
+  text('Score : '+score, 330, 30);
   draw_note(current_note)
   
   
@@ -51,7 +51,9 @@ function draw_button() {
   note = ["do","ré","mi","fa","sol","la","si"]
   for (let i=0;i<note.length;i+=1) {
     button = createButton(note[i]);
-    button.position(10+i*50, 20); 
+    button.position(width/2-note.length*50+i*100, 450);
+    button.style('font-size:30px');
+    button.size(90,60);
     button.mousePressed(() => {check_result(i) });
   }
 }
